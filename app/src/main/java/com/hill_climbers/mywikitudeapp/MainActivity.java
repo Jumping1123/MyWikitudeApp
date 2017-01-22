@@ -99,20 +99,34 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
     }
 
     //（5）onResumeメソッドでArchitectViewのonResumeメソッドを実行
+    // さらに位置情報連携のlocationProviderのonResumeメソッドも実行する
     @Override
     protected void onResume() {
         super.onResume();
         if ( this.architectView != null ) {
             this.architectView.onResume();
+            if (this.sensorAccuracyListener!=null) { //センサー精度のリスナーをregistしなおす
+                this.architectView.registerSensorAccuracyChangeListener( this.sensorAccuracyListener );
+            }
+        }
+        if ( this.locationProvider != null ) {
+            this.locationProvider.onResume();
         }
     }
 
     //（6）onPauseメソッドでArchitectViewのonPauseメソッドを実行
+    // さらに位置情報連携のlocationProviderのonPauseメソッドも実行する
     @Override
     protected void onPause() {
         super.onPause();
         if ( this.architectView != null ) {
             this.architectView.onPause();
+            if ( this.sensorAccuracyListener != null ) { //センサー精度のリスナーをregist解除
+                this.architectView.unregisterSensorAccuracyChangeListener(this.sensorAccuracyListener);
+            }
+        }
+        if ( this.locationProvider != null ) {
+            this.locationProvider.onPause();
         }
     }
 
@@ -120,7 +134,6 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         // call mandatory live-cycle method of architectView
         if ( this.architectView != null ) {
             this.architectView.onDestroy();
