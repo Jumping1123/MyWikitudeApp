@@ -6,6 +6,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.widget.Toast;
 
+
 public class LocationProvider implements ArchitectViewHolderInterface.ILocationProvider {
 
     /** location listener called on each location update */

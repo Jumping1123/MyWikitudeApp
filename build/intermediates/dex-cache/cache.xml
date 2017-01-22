@@ -12,6 +12,33 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_2f4ecd057821efb6d6504e9fbe7118ddad4e4609/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_be940a464f5b09227720a351f044b73ec6a5358a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_a482892bee10aab8cdd629114eb620c2c82ef7c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -21,11 +48,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_fd334a44d48fdde562e863487857cea7b87ff5ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="c06c42d550a9d8ed00afffd30aad23258abee941">
+        sha1="5e111c6c58cb7ca90f96b2e6243a966b77a5a07f">
         <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a409ee64f3f46cd39558c848c60b9b5e552609ba/classes.dex" />
     </item>
     <item
@@ -45,6 +81,15 @@
         revision="24.0.2"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
         <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_b7d67617f0cbaf29c66c3da5fd540018c8700dd5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hamatani63/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_ff751d8c52d85c7031d6a6159545697317999241/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -75,69 +120,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_1ba3c7c245d7b522b5df5de5cf92ecf19ae8fed4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_e2979bad6a68c82df92587524fd9167ef4c2e4ee/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_2f4ecd057821efb6d6504e9fbe7118ddad4e4609/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_be940a464f5b09227720a351f044b73ec6a5358a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_a482892bee10aab8cdd629114eb620c2c82ef7c7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_fd334a44d48fdde562e863487857cea7b87ff5ca/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hamatani63/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_ff751d8c52d85c7031d6a6159545697317999241/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -153,6 +135,24 @@
         revision="24.0.2"
         sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
         <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_b39c705120ca08f0a4b68b915f38fae1c5088fde/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_1ba3c7c245d7b522b5df5de5cf92ecf19ae8fed4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/hamatani63/Dropbox/Android/wikitude/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_e2979bad6a68c82df92587524fd9167ef4c2e4ee/classes.dex" />
     </item>
     <item
         is-multidex="true"
