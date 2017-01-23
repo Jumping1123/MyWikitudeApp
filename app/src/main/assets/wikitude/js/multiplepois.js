@@ -14,6 +14,7 @@ var World = {
 	currentMarker: null,
 
 	// called to inject new POI data
+	// このloadPoisFromJsonDataは requestDataFromLocal関数の中でPOIデータが作成された後に呼び出される
 	loadPoisFromJsonData: function loadPoisFromJsonDataFn(poiData) {
 		// empty list of visible markers
 		World.markerList = [];
@@ -99,7 +100,7 @@ var World = {
 	// request POI data: ここでARオブジェクトのロケーション（位置）を定義している
 	// このコードでは現在地周辺にランダムに20個のラベルを表示する
 	requestDataFromLocal: function requestDataFromLocalFn(centerPointLatitude, centerPointLongitude) {
-		var poisToCreate = 20; //20個の位置情報
+		var poisToCreate = 50; //20個の位置情報
 		var poiData = [];
 
 		for (var i = 0; i < poisToCreate; i++) {
@@ -117,8 +118,8 @@ var World = {
 
 };
 
-/* 
-	Set a custom function where location changes are forwarded to. There is also a possibility to set AR.context.onLocationChanged to null. In this case the function will not be called anymore and no further location updates will be received. 
+/*
+	Set a custom function where location changes are forwarded to. There is also a possibility to set AR.context.onLocationChanged to null. In this case the function will not be called anymore and no further location updates will be received.
 */
 AR.context.onLocationChanged = World.locationChanged;
 

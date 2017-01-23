@@ -50,7 +50,6 @@ function Marker(poiData) {
     });
 
     // create the AR.GeoObject with the drawable objects
-    // ここでmultiplepois.jsの位置情報を読み込んでいる
     this.markerObject = new AR.GeoObject(markerLocation, { // markerLocationが位置情報
         drawables: {
             // markerDrawable_idleが非選択時、markerDrawable_selectedが選択時の描画状態、titleLabelがARオブジェクトのタイトル、descriptionLabelがARオブジェクトの説明情報
@@ -61,6 +60,7 @@ function Marker(poiData) {
     return this;
 }
 
+// AR.ImageDrawable_idle(ARオブジェクト非選択時の描画状態)のonClickで呼び出される関数
 Marker.prototype.getOnClickTrigger = function(marker) {
 
     /*
