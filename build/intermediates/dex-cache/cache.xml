@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="515b7cc494863af2b770d5aebea2a92a1c6df492">
+        sha1="d9fe0dd3faacff415d01cc63aaf6389fc4c499a6">
         <dex dex="/Users/hamatani63/Documents/GitHub/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_af00f745bd0592e2dc3809e191769b46427dd2fa/classes.dex" />
     </item>
     <item
@@ -133,7 +133,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="f27cc498df231836337dbfbe25fc4a8e764d73d4">
+        sha1="9333123001abfca698a69242c68f61e37893cfd7">
         <dex dex="/Users/hamatani63/Documents/GitHub/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c1618a07a72a98c2daa667964706ac050dadf15c/classes.dex" />
     </item>
     <item

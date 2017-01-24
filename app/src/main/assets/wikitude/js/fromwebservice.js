@@ -31,13 +31,20 @@ var World = {
         var shopDatas = poiData.results.shop;
 		// loop through POI-information and create an AR.GeoObject (=Marker) per POI
 		for (var currentPlaceNr = 0; currentPlaceNr < shopDatas.length; currentPlaceNr++) {
+		    var imagePathLarge = shopDatas[currentPlaceNr].photo.pc.l;
+		    var shopImageResourceLarge = new AR.ImageResource(imagePathLarge);
+		    var imagePathMedium = shopDatas[currentPlaceNr].photo.pc.m;
+            var shopImageResourceMedium = new AR.ImageResource(imagePathMedium);
+
 			var singlePoi = {
             				"id": shopDatas[currentPlaceNr].id,
             				"latitude": parseFloat(shopDatas[currentPlaceNr].lat),
             				"longitude": parseFloat(shopDatas[currentPlaceNr].lng),
             				"altitude": 100,
             				"title": shopDatas[currentPlaceNr].name,
-            				"description": shopDatas[currentPlaceNr].name_kana
+            				"description": shopDatas[currentPlaceNr].name_kana,
+            				"imageResourceLarge": shopImageResourceLarge,
+            				"imageResourceMedium": shopImageResourceMedium
             			};
 
 			World.markerList.push(new Marker(singlePoi));

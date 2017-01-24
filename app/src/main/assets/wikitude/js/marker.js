@@ -11,7 +11,7 @@ function Marker(poiData) {
 
     // create an AR.ImageDrawable for the marker in idle state
     // ARオブジェクト非選択時の描画状態
-    this.markerDrawable_idle = new AR.ImageDrawable(World.markerDrawable_idle, 2.5, {
+    this.markerDrawable_idle = new AR.ImageDrawable(poiData.imageResourceLarge, 5, {
         zOrder: 0,
         opacity: 1.0,
         /*
@@ -22,7 +22,7 @@ function Marker(poiData) {
 
     // create an AR.ImageDrawable for the marker in selected state
     // ARオブジェクト選択時の描画状態
-    this.markerDrawable_selected = new AR.ImageDrawable(World.markerDrawable_selected, 2.5, {
+    this.markerDrawable_selected = new AR.ImageDrawable(poiData.imageResourceLarge, 8, {
         zOrder: 0,
         opacity: 0.0,
         onClick: null
@@ -30,7 +30,7 @@ function Marker(poiData) {
 
     // create an AR.Label for the marker's title
     // ARオブジェクトのタイトル：先頭10文字を白色#FFFFFFで描画
-    this.titleLabel = new AR.Label(poiData.title.trunc(10), 1, {
+    this.titleLabel = new AR.Label(poiData.title.trunc(10), 0.6, {
         zOrder: 1,
         offsetY: 0.55,
         style: {
@@ -41,7 +41,7 @@ function Marker(poiData) {
 
     // create an AR.Label for the marker's description
     // ARオブジェクトの説明情報：先頭15文字を白色#FFFFFFで描画
-    this.descriptionLabel = new AR.Label(poiData.description.trunc(15), 0.8, {
+    this.descriptionLabel = new AR.Label(poiData.description.trunc(15), 0.3, {
         zOrder: 1,
         offsetY: -0.55,
         style: {
