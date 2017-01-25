@@ -1,8 +1,15 @@
 package com.hill_climbers.mywikitudeapp;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -20,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
     protected Location 						 lastKnownLocaton;
     protected ArchitectViewHolderInterface.ILocationProvider locationProvider;
     protected LocationListener 				 locationListener;
+
+    // urlListener handling "document.location= 'architectsdk://...' " calls in JavaScript"
+    protected ArchitectView.ArchitectUrlListener urlListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
             Toast.makeText(getApplicationContext(), "can't create Architect View", Toast.LENGTH_SHORT).show();
         }
 
-        //方位トラッキングのリスナークラス。wikitudeのクラス。
-        this.sensorAccuracyListener = this.getSensorAccuracyListener();
         //位置トラッキングのリスナー
         this.locationListener = new LocationListener() {
             @Override
@@ -78,6 +86,19 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
         };
         //位置のプロバイダーをセット。getLocationProviderは以下で定義
         this.locationProvider = getLocationProvider(this.locationListener);
+
+        //センサー精度のリスナー
+        // set accuracy listener if implemented, you may e.g. show calibration prompt for compass using this listener
+        this.sensorAccuracyListener = this.getSensorAccuracyListener();
+
+        //URLリスナー(JSとの連携)：「JSでクリック → ネイティブ側でActivityを開く」際にデータの受け渡しに使う
+        // set urlListener, any calls made in JS like "document.location = 'architectsdk://foo?bar=123'" is forwarded to this listener, use this to interact between JS and native Android activity/fragment
+        this.urlListener = this.getUrlListener();
+
+        // register valid urlListener in architectView, ensure this is set before content is loaded to not miss any event
+        if (this.urlListener != null && this.architectView != null) {
+            this.architectView.registerUrlListener( this.getUrlListener() );
+        }
     }
 
     //(4）onPostCreateメソッド: onCreateの後で呼ばれる
@@ -175,5 +196,25 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
     }
 
     private long lastCalibrationToastShownTimeMillis = System.currentTimeMillis();
+
+    //WebViewとの連携
+    public ArchitectView.ArchitectUrlListener getUrlListener() {
+        return new ArchitectView.ArchitectUrlListener() {
+            @Override
+            public boolean urlWasInvoked(String uriString) {
+                Uri invokedUri = Uri.parse(uriString);
+                // pressed "More" button on POI-detail panel
+                if ("markerselected".equalsIgnoreCase(invokedUri.getHost())) {
+                    final Intent poiDetailIntent = new Intent(MainActivity.this, SamplePoiDetailActivity.class);
+                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_ID, String.valueOf(invokedUri.getQueryParameter("id")) );
+                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_TITILE, String.valueOf(invokedUri.getQueryParameter("title")) );
+                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_DESCR, String.valueOf(invokedUri.getQueryParameter("description")) );
+                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_URL, String.valueOf(invokedUri.getQueryParameter("url")) );
+                    MainActivity.this.startActivity(poiDetailIntent);
+                }
+                return true;
+            }
+        };
+    }
 
 }

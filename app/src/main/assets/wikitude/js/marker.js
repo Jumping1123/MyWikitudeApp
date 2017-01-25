@@ -73,7 +73,8 @@ Marker.prototype.getOnClickTrigger = function(marker) {
 
         if (marker.isSelected) {
 
-            Marker.prototype.setDeselected(marker);
+            //Marker.prototype.setDeselected(marker);
+            World.onPoiImageClicked();
 
         } else {
             Marker.prototype.setSelected(marker);

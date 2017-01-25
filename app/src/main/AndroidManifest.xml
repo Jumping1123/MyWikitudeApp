@@ -30,6 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- poi detail screen -->
+        <activity android:name=".SamplePoiDetailActivity"/>
+
     </application>
 
 </manifest>

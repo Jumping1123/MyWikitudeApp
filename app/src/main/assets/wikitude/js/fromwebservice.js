@@ -33,8 +33,6 @@ var World = {
 		for (var currentPlaceNr = 0; currentPlaceNr < shopDatas.length; currentPlaceNr++) {
 		    var imagePathLarge = shopDatas[currentPlaceNr].photo.pc.l;
 		    var shopImageResourceLarge = new AR.ImageResource(imagePathLarge);
-		    var imagePathMedium = shopDatas[currentPlaceNr].photo.pc.m;
-            var shopImageResourceMedium = new AR.ImageResource(imagePathMedium);
 
 			var singlePoi = {
             				"id": shopDatas[currentPlaceNr].id,
@@ -44,7 +42,7 @@ var World = {
             				"title": shopDatas[currentPlaceNr].name,
             				"description": shopDatas[currentPlaceNr].name_kana,
             				"imageResourceLarge": shopImageResourceLarge,
-            				"imageResourceMedium": shopImageResourceMedium
+            				"url": shopDatas[currentPlaceNr].urls.pc
             			};
 
 			World.markerList.push(new Marker(singlePoi));
@@ -67,6 +65,21 @@ var World = {
 			icon: iconToUse
 		});
 	},
+
+
+    // user clicked an image -> fire event to open native screen
+    onPoiImageClicked: function onPoiImageClickedFn() {
+    	var currentMarker = World.currentMarker;
+    	var architectSdkUrl = "architectsdk://markerselected?id=" + encodeURIComponent(currentMarker.poiData.id) + "&title=" + encodeURIComponent(currentMarker.poiData.title) + "&description=" + encodeURIComponent(currentMarker.poiData.description) + "&url=" + encodeURIComponent(currentMarker.poiData.url);
+    	/*
+    		The urlListener of the native project intercepts this call and parses the arguments.
+    		This is the only way to pass information from JavaSCript to your native code.
+    		Ensure to properly encode and decode arguments.
+    		Note: you must use 'document.location = "architectsdk://...' to pass information from JavaScript to native.
+    		! This will cause an HTTP error if you didn't register a urlListener in native architectView !
+    	*/
+    	document.location = architectSdkUrl;
+    },
 
 	// location updates, fired every time you call architectView.setLocation() in native environment
 	// Note: You may set 'AR.context.onLocationChanged = null' to no longer receive location updates in World.locationChanged.
