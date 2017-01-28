@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="9fe91c26e522931ac71ade1353bae38c8e302541">
+        sha1="165848a308956371a246e55233b64c02bdbf54fc">
         <dex dex="/Users/hamatani63/Documents/GitHub/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_af00f745bd0592e2dc3809e191769b46427dd2fa/classes.dex" />
     </item>
     <item
@@ -133,7 +133,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="af9214cd52714ba2bf258d75f1b081e2464e5b52">
+        sha1="536e566ffe9680ac6b7ee109882d6d07226c8125">
         <dex dex="/Users/hamatani63/Documents/GitHub/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c1618a07a72a98c2daa667964706ac050dadf15c/classes.dex" />
     </item>
     <item
@@ -153,6 +153,15 @@
         revision="24.0.2"
         sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
         <dex dex="/Users/hamatani63/Documents/GitHub/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5297b56372a2b1893d88f74f2f4e8edcee4442c2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hamatani63/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.0/e019d15a13a9786f881141d2df6654b8510bce8b/core-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="/Users/hamatani63/Documents/GitHub/MyWikitudeApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/core-3.2.0_dc1edd36daacb9666c4d3e4303c5bbfc4fcd58aa/classes.dex" />
     </item>
     <item
         is-multidex="true"

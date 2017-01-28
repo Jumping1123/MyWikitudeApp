@@ -10,9 +10,9 @@ import android.widget.TextView;
 public class SamplePoiDetailActivity extends AppCompatActivity {
     private WebView mWebView;
 
-    public static final String EXTRAS_KEY_POI_ID = "id";
+//    public static final String EXTRAS_KEY_POI_ID = "id";
     public static final String EXTRAS_KEY_POI_TITILE = "title";
-    public static final String EXTRAS_KEY_POI_DESCR = "description";
+//    public static final String EXTRAS_KEY_POI_DESCR = "description";
     public static final String EXTRAS_KEY_POI_URL = "url";
 
     @Override
@@ -25,10 +25,6 @@ public class SamplePoiDetailActivity extends AppCompatActivity {
         //メニュー：タイトル表示
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle(getIntent().getExtras().getString(EXTRAS_KEY_POI_TITILE));
-
-//        ((TextView)findViewById(R.id.poi_id)).setText( getIntent().getExtras().getString(EXTRAS_KEY_POI_ID) );
-//        ((TextView)findViewById(R.id.poi_title)).setText( getIntent().getExtras().getString(EXTRAS_KEY_POI_TITILE) );
-//        ((TextView)findViewById(R.id.poi_description)).setText( getIntent().getExtras().getString(EXTRAS_KEY_POI_DESCR) );
 
         //WebView
         mWebView = (WebView) findViewById(R.id.webView1);

@@ -4,4 +4,8 @@
     <string name="poi_name">Name</string>
     <string name="poi_description">Description</string>
     <string name="poi_id">ID</string>
+    <string name="isbn_dialog_title">バーコード読み取り結果</string>
+    <string name="alert_dialog_cancel">キャンセル</string>
+    <string name="alert_dialog_ok">詳細</string>
+
 </resources>

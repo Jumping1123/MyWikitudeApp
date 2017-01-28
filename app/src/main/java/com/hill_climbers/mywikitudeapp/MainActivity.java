@@ -1,17 +1,13 @@
 package com.hill_climbers.mywikitudeapp;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.wikitude.architect.ArchitectView;
@@ -20,6 +16,7 @@ import com.wikitude.architect.StartupConfiguration;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements ArchitectViewHolderInterface{
+    private String TAG = "MainActivity";
 
     //（1）ArchitectView変数を宣言する
     protected ArchitectView architectView;
@@ -38,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
 
         //mogi先生コメント： Android6対応。権限をアプリで実装しないとエラーになる。SDKのターゲットを23にしちゃうと必要。
         //requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.CAMERA}, 0);
-
         this.architectView = (ArchitectView)this.findViewById( R.id.architectView );
+
         //（2）onCreateメソッドの中でライセンスキーを読み込む
         final StartupConfiguration config = new StartupConfiguration(this.getWikitudeSDKLicenseKey(), StartupConfiguration.Features.Geo, this.getCameraPosition());
 
@@ -109,6 +106,11 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
         if ( this.architectView != null ) {
             // call mandatory live-cycle method of architectView
             this.architectView.onPostCreate();
+//            //Sampleプラグイン
+//            this.samplePlugin = new SamplePlugin("com.plugin.zxing", architectView);
+//            boolean temp = architectView.registerPlugin(samplePlugin);
+//            Log.d(TAG, "registerPlugin: " + temp);
+
             try {
                 // ArchitectViewのLoadメソッドでindex.htmlファイルを読み込む
                 this.architectView.load( this.getARchitectWorldPath() );
@@ -197,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
 
     private long lastCalibrationToastShownTimeMillis = System.currentTimeMillis();
 
-    //WebViewとの連携
+    //JS -> WebViewで詳細表示
     public ArchitectView.ArchitectUrlListener getUrlListener() {
         return new ArchitectView.ArchitectUrlListener() {
             @Override
@@ -206,9 +208,9 @@ public class MainActivity extends AppCompatActivity implements ArchitectViewHold
                 // pressed "More" button on POI-detail panel
                 if ("markerselected".equalsIgnoreCase(invokedUri.getHost())) {
                     final Intent poiDetailIntent = new Intent(MainActivity.this, SamplePoiDetailActivity.class);
-                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_ID, String.valueOf(invokedUri.getQueryParameter("id")) );
+//                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_ID, String.valueOf(invokedUri.getQueryParameter("id")) );
                     poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_TITILE, String.valueOf(invokedUri.getQueryParameter("title")) );
-                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_DESCR, String.valueOf(invokedUri.getQueryParameter("description")) );
+//                    poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_DESCR, String.valueOf(invokedUri.getQueryParameter("description")) );
                     poiDetailIntent.putExtra(SamplePoiDetailActivity.EXTRAS_KEY_POI_URL, String.valueOf(invokedUri.getQueryParameter("url")) );
                     MainActivity.this.startActivity(poiDetailIntent);
                 }
